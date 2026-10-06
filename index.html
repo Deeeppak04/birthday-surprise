@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>A Little Birthday Surprise</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="ambient"></div>
+  <div class="grain"></div>
+
+  <!-- FLOATING HEARTS / BALLOONS -->
+  <div id="floaters"></div>
+
+
+  <main>
+
+    <!-- =====================================================
+         PAGE 1 — WELCOME
+    ====================================================== -->
+
+    <section class="screen active" id="welcome">
+
+      <div class="hero-card">
+
+        <div class="tiny-label">
+          A LITTLE SOMETHING FOR YOU
+        </div>
+
+        <div class="hero-heart">
+          ♥
+        </div>
+
+        <h1>
+          Today deserves<br>
+          <span>a little magic.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          There is a tiny surprise waiting for you.
+        </p>
+
+        <button
+          class="primary-button"
+          onclick="showScreen('balloon')"
+        >
+          Begin the surprise
+          <span>→</span>
+        </button>
+
+      </div>
+
+      <div class="bottom-note">
+        made with a little thought &nbsp;✦&nbsp; just for you
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGE 2 — BALLOON
+    ====================================================== -->
+
+    <section class="screen" id="balloon">
+
+      <div class="balloon-page">
+
+        <div class="tiny-label">
+          STEP ONE
+        </div>
+
+        <h2>
+          Pop the balloon
+        </h2>
+
+        <p>
+          Something is hiding behind it.
+        </p>
+
+        <button
+          id="balloonBtn"
+          class="balloon-button"
+          onclick="popBalloon()"
+        >
+
+          <div class="balloon">
+            🎈
+          </div>
+
+          <div class="balloon-string"></div>
+
+        </button>
+
+        <div
+          id="popMessage"
+          class="pop-message"
+        >
+          tap the balloon
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGE 3 — ANCIENT BIRTHDAY LETTER
+    ====================================================== -->
+
+    <section class="screen" id="wish">
+
+      <div class="parchment-wrap">
+
+        <div class="parchment">
+
+          <div class="parchment-top">
+            <span>✦</span>
+            <span>THE LITTLE LETTER</span>
+            <span>✦</span>
+          </div>
+
+          <div class="wax-seal">
+            ♥
+          </div>
+
+          <div class="letter-content">
+
+            <div class="letter-small">
+              On this special day...
+            </div>
+
+            <h2>
+              A Birthday Wish
+            </h2>
+
+            <div class="ornament">
+              ❦
+            </div>
+
+            <p>
+              Happy Birthday, sweetie! ❤️
+            </p>
+
+            <p>
+              Wishing you a very, very happy birthday.
+              You are the Mother Goddess of Nature—a symbol of purity,
+              May God always bless you with endless happiness, strength, peace, and love,
+              May your life always be filled with the same warmth, 
+              purity, and goodness that you bring to others.
+            </p>
+
+            <p>
+              And because birthdays deserve more than words,
+              there are a few adventures waiting for you...
+            </p>
+
+            <div class="signature">
+              With a little magic ✦
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <button
+        class="primary-button parchment-button"
+        onclick="showScreen('gifts')"
+      >
+        Open the surprises
+        <span>→</span>
+      </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGE 4 — GIFT SELECTION
+    ====================================================== -->
+
+    <section class="screen" id="gifts">
+
+      <div class="gift-page">
+
+        <div class="gift-heading">
+
+          <div class="tiny-label">
+            YOUR BIRTHDAY ADVENTURES
+          </div>
+
+          <h2>
+            Choose <span>two.</span>
+          </h2>
+
+          <p>
+            You can explore every gift before making your choices.
+          </p>
+
+          <div class="selection-counter">
+            <span id="count">0</span>
+            <span>/ 2 selected</span>
+          </div>
+
+        </div>
+
+
+        <!-- GIFT GRID -->
+
+        <div class="gift-grid">
+
+
+          <!-- ===============================
+               GIFT 1
+          ================================ -->
+
+          <article
+            class="gift-card"
+            data-id="1"
+            style="
+              --gift-image:
+              url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=3840&q=95');
+            "
+          >
+
+            <div class="gift-number">
+              01
+            </div>
+
+            <div class="gift-overlay"></div>
+
+            <div class="gift-info">
+
+              <span class="gift-kicker">
+                THE FIRST SURPRISE
+              </span>
+
+              <h3>
+                A Cozy Day Away
+              </h3>
+
+              <p>
+                Premium Airbnb + cooking together.
+              </p>
+
+              <button
+                class="view-gift"
+                onclick="openGift(1)"
+              >
+                Explore this gift ✦
+              </button>
+
+            </div>
+
+            <div class="selected-mark">
+              ✓
+            </div>
+
+          </article>
+
+
+          <!-- ===============================
+               GIFT 2 — TRAMPOLINE PARK
+          ================================ -->
+
+          <article
+            class="gift-card"
+            data-id="2"
+            style="
+              --gift-image:
+              url('https://images.pexels.com/photos/6571947/pexels-photo-6571947.jpeg?auto=compress&cs=tinysrgb&w=3840');
+            "
+          >
+
+            <div class="gift-number">
+              02
+            </div>
+
+            <div class="gift-overlay"></div>
+
+            <div class="gift-info">
+
+              <span class="gift-kicker">
+                THE SECOND SURPRISE
+              </span>
+
+              <h3>
+                Jump Day
+              </h3>
+
+              <p>
+                A trampoline park adventure.
+              </p>
+
+              <button
+                class="view-gift"
+                onclick="openGift(2)"
+              >
+                Explore this gift ✦
+              </button>
+
+            </div>
+
+            <div class="selected-mark">
+              ✓
+            </div>
+
+          </article>
+
+
+          <!-- ===============================
+               GIFT 3 — MOVIE
+          ================================ -->
+
+          <article
+            class="gift-card"
+            data-id="3"
+            style="
+              --gift-image:
+              url('https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=3840');
+            "
+          >
+
+            <div class="gift-number">
+              03
+            </div>
+
+            <div class="gift-overlay"></div>
+
+            <div class="gift-info">
+
+              <span class="gift-kicker">
+                THE THIRD SURPRISE
+              </span>
+
+              <h3>
+                Movie Escape
+              </h3>
+
+              <p>
+                A movie, snacks and a proper cinema day.
+              </p>
+
+              <button
+                class="view-gift"
+                onclick="openGift(3)"
+              >
+                Explore this gift ✦
+              </button>
+
+            </div>
+
+            <div class="selected-mark">
+              ✓
+            </div>
+
+          </article>
+
+
+          <!-- ===============================
+               GIFT 4 — GRAND VENICE MALL
+          ================================ -->
+
+          <article
+            class="gift-card"
+            data-id="4"
+            style="
+              --gift-image:
+              url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Grand_Venice_Mall_inertia.jpg');
+            "
+          >
+
+            <div class="gift-number">
+              04
+            </div>
+
+            <div class="gift-overlay"></div>
+
+            <div class="gift-info">
+
+              <span class="gift-kicker">
+                THE FOURTH SURPRISE
+              </span>
+
+              <h3>
+                Grand Venice Mall
+              </h3>
+
+              <p>
+                A cab ride, Venetian architecture and a whole day out.
+              </p>
+
+              <button
+                class="view-gift"
+                onclick="openGift(4)"
+              >
+                Explore this gift ✦
+              </button>
+
+            </div>
+
+            <div class="selected-mark">
+              ✓
+            </div>
+
+          </article>
+
+
+          <!-- ===============================
+               GIFT 5 — ESCAPE ROOM
+          ================================ -->
+
+          <article
+            class="gift-card"
+            data-id="5"
+            style="
+              --gift-image:
+              url('https://images.pexels.com/photos/29483111/pexels-photo-29483111.jpeg?auto=compress&cs=tinysrgb&w=3840');
+            "
+          >
+
+            <div class="gift-number">
+              05
+            </div>
+
+            <div class="gift-overlay"></div>
+
+            <div class="gift-info">
+
+              <span class="gift-kicker">
+                THE FIFTH SURPRISE
+              </span>
+
+              <h3>
+                Escape / Mystery Room
+              </h3>
+
+              <p>
+                Solve clues, crack puzzles and escape together.
+              </p>
+
+              <button
+                class="view-gift"
+                onclick="openGift(5)"
+              >
+                Explore this gift ✦
+              </button>
+
+            </div>
+
+            <div class="selected-mark">
+              ✓
+            </div>
+
+          </article>
+
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <div class="submit-area">
+
+          <button
+            id="submitBtn"
+            class="primary-button submit-button"
+            onclick="submitGifts()"
+            disabled
+          >
+            Confirm my two choices ✦
+          </button>
+
+          <div class="selection-hint">
+            Select exactly two gifts
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGE 5 — CONFIRMATION
+    ====================================================== -->
+
+    <section class="screen" id="done">
+
+      <div class="done-card">
+
+        <div class="done-symbol">
+          ♥
+        </div>
+
+        <div class="tiny-label">
+          YOUR CHOICES ARE SAVED
+        </div>
+
+        <h2>
+          And so it begins...
+        </h2>
+
+        <p id="chosenText">
+          Your choices have been saved.
+        </p>
+
+        <div class="done-line"></div>
+
+        <p class="done-small">
+          Now all that's left is to wait for the adventure.
+        </p>
+
+        <button
+          class="secondary-button"
+          onclick="resetExperience()"
+        >
+          Experience it again
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       GIFT MODAL
+  ====================================================== -->
+
+  <div
+    id="giftModal"
+    class="gift-modal"
+  >
+
+    <div
+      class="modal-backdrop"
+      onclick="closeGift()"
+    ></div>
+
+    <div class="modal-card">
+
+      <button
+        class="modal-close"
+        onclick="closeGift()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <div
+        id="modalImage"
+        class="modal-image"
+      ></div>
+
+      <div class="modal-content">
+
+        <div
+          id="modalNo"
+          class="modal-number"
+        >
+          GIFT 01
+        </div>
+
+        <h2 id="modalTitle">
+          Gift
+        </h2>
+
+        <p id="modalDescription">
+          Description
+        </p>
+
+        <button
+          id="selectGiftBtn"
+          class="primary-button"
+          onclick="selectCurrentGift()"
+        >
+          Select this gift
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
